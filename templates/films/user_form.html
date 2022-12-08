@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid d-flex justify-content-center">
+    <form method="POST" action="/films/recommend" sytle="width: 40%;">
+
+        <!-- ADD THIS TAG IN HTML FORMS WITH POST REQUESTS-->
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputProduct">Enter the product name </label>
+            <input name="product" type="text" class="form-control my-2" id="exampleInputProduct" placeholder="Product name">
+        </div>
+        <button value="submit" type="submit" class="btn btn-primary mt-2" name="submit">Submit</button>
+    </form>
+</div>
+
+
+{% if submitbutton == "submit"  %} 
+<h1> Your product name is {{ prod_name }}</h1>
+{% endif %}
+
+{% endblock  %}
