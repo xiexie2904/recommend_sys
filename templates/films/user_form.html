@@ -17,7 +17,22 @@
 
 
 {% if submitbutton == "submit"  %} 
-<h1> Your product name is {{ prod_name }}</h1>
+<h1> You search for product named :  {{ prod_name }}</h1>
+
+<body>
+    <br>
+    <div class="container w-50">
+        <ul class="list-group">
+            <li class="list-group-item active text-center font-weight-bold">Recommendation</li>
+            {% for product in recommendation %}
+                    <li class="list-group-item">{{ product}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+
 {% endif %}
 
 {% endblock  %}
+
